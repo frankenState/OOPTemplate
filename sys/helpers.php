@@ -2,7 +2,7 @@
 
 $EV = [
 	"css" => "assets/css/",
-	"js" => "assets/js"
+	"js" => "assets/js/"
 ];
 
 function css($name) {
