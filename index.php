@@ -1,6 +1,8 @@
 <?php 
 include 'sys/helpers.php'; 
 include 'sys/db.php';
+
+// github.com/frankenState/
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,7 +52,9 @@ include 'sys/db.php';
 	</tbody>
 	</table>
 	<?php
-	} // end of if
+	} else {
+		echo "<h1>No data found.</h1>";
+	} // end of if-else
 
 	echo "<br/>". date("F m, Y");
 	$tz=timezone_open("Europe/Paris");
