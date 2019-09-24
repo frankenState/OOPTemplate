@@ -54,7 +54,7 @@ class Math {
 		foreach($args as $num){
 			$sum += $num;
 		}
-		echo "Sum: " . $sum;
+		echo "Sum: " . $sum . "<br/>";
 	}
 }
 # Scope Resolution Operator
@@ -67,7 +67,7 @@ abstract class Drivable {
 
 class Vehicle extends Drivable {
 	public function onAccelerate(){
-		echo " Accelerating:  9.8m/s^2";
+		echo " Accelerating:  9.8m/s^2 <br/>";
 	}
 }
 
@@ -87,6 +87,10 @@ class Report implements Mail, Sanitize {
 		echo "No grammar error found.";
 	}
 }
+
+$report = new Report();
+$report->onSend();
+$report->onGrammarCheck();
 
 
 
