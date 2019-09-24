@@ -27,7 +27,11 @@ $name = [
 // echo date('Y/m/D') . "<br/>";
 
 $date=date_create("3/12/98");
-echo date_format($date,"Y/m/d") . "<br/>";
+echo date_format($date,"Y/m/D") . "<br/>";
+
+echo strrev("Hello World!") . "<br/>";
+echo strlen("Hello World!") . "<br/>";
+
 
 function sanitize($data) { 
 	// $temp1 = htmlentities($data);
@@ -49,22 +53,26 @@ function sanitize($data) {
 // echo "ucwords: " . ucwords("hello world") . "<br/>";
 
 class Math {
+	// public static function sum($n1, $n2){
+	// 	echo "Sum: " . ($n1 + $n2);
+	// }
+	# spread operator
 	public static function sum(...$args){
 		$sum = 0;
 		foreach($args as $num){
 			$sum += $num;
 		}
-		echo "Sum: " . $sum . "<br/>";
+		echo "Sum: " . $sum. "<br/>";
 	}
 }
 # Scope Resolution Operator
-Math::sum(1,3,5,6,7,100);
+Math::sum(1,2,3, -100);
+// Math::sum(1,3,5,6,7,100);
 
 # An abstract class is one that cannot be instantiated, only inherited. 
 abstract class Drivable {
 	abstract function onAccelerate();
 }
-
 class Vehicle extends Drivable {
 	public function onAccelerate(){
 		echo " Accelerating:  9.8m/s^2 <br/>";
@@ -84,16 +92,24 @@ class Report implements Mail, Sanitize {
 		echo "Sending the report via Email <br/>";
 	}
 	public function onGrammarCheck(){
-		echo "No grammar error found.";
+		echo "No grammar error found. <br/>";
+	}
+	public static function something(){
+		echo "Something.<br/>";
 	}
 }
 
 $report = new Report();
-$report->onSend();
 $report->onGrammarCheck();
+$report->onSend();
+$report->something();
+Report::something();
 
-echo "<br>" . "Hello" . " Hello" , " Hello";
-print "<br/>Hello world";
+# echo - no return value
+# multiple arguments
+echo "<br>" , "Hello" , " Hello" , " Hello";
+# return 1 - 
+print "<br>" . "Hello" . " Hello" . " Hello";
 
 
 ?>
