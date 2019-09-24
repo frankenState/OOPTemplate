@@ -92,7 +92,8 @@ $report = new Report();
 $report->onSend();
 $report->onGrammarCheck();
 
-
+echo "<br>" . "Hello" . " Hello" , " Hello";
+print "<br/>Hello world";
 
 
 ?>
